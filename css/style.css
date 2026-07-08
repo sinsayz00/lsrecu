@@ -1,0 +1,139 @@
+/* ============================================================
+   LS메카피온 채용공고 — 스타일시트
+   ============================================================ */
+
+/* --- reset & base --- */
+* { box-sizing: border-box; }
+body { margin: 0; background: #e8e6e0; }
+a { color: inherit; }
+a:hover { color: inherit; }
+
+.recruit {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  background: #efede8;
+  font-family: Pretendard, sans-serif;
+  color: #1b2330;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero { position: relative; padding: clamp(40px, 6vw, 62px) clamp(24px, 5vw, 60px) clamp(30px, 4vw, 44px); }
+
+.hero__rail { position: absolute; left: clamp(10px, 2.4vw, 30px); top: 60px; height: 340px; display: flex; align-items: flex-start; }
+.hero__rail-text { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; font-size: 14px; letter-spacing: 5px; color: #9a9790; font-weight: 700; }
+
+.hero__main { margin-left: clamp(28px, 6vw, 74px); }
+.hero__flex { display: flex; justify-content: space-between; align-items: flex-start; gap: 28px; flex-wrap: wrap; }
+
+.hero__title { margin: 0; flex: 1 1 280px; font-size: clamp(28px, 5vw, 46px); font-weight: 800; line-height: 1.32; letter-spacing: -1px; color: #1b2330; }
+.hero__title .accent { color: #2b5aa6; }
+.hero__logo { width: clamp(150px, 22vw, 220px); height: auto; display: block; flex-shrink: 0; margin-top: 6px; }
+
+.hero__divider { height: 1px; background: #d7d4cd; margin: clamp(28px, 4vw, 42px) 0 0; }
+
+.hero__img { position: relative; margin-top: clamp(24px, 4vw, 36px); border-radius: 4px; overflow: hidden; aspect-ratio: 16 / 7; background: #d6d3cd; }
+.hero__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+
+.hero__line { height: 1px; background: #1B2330; margin-top: clamp(24px, 4vw, 36px); margin-left: calc(-1 * clamp(28px, 6vw, 74px)); width: calc(100% + clamp(28px, 6vw, 74px)); }
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+.content { padding: clamp(30px, 4vw, 44px) clamp(24px, 5vw, 60px) clamp(50px, 6vw, 72px); }
+.content__eyebrow { font-size: 12px; letter-spacing: 3px; color: #1B2330; font-weight: 700; margin-bottom: 12px; }
+.content__title { margin: 0 0 clamp(30px, 4vw, 44px); font-size: clamp(22px, 3.6vw, 30px); font-weight: 800; letter-spacing: -0.5px; color: #1b2330; }
+
+/* --- row (label + body) --- */
+.row { display: flex; gap: clamp(18px, 4vw, 44px); }
+.row--first { padding-bottom: 30px; }
+.row--rule { padding: 26px 0; border-top: 1px solid #1B2330; }
+.row--rule-lg { padding: 32px 0; border-top: 1px solid #1B2330; }
+.row--last { padding: 32px 0 0; border-top: 1px solid #1B2330; }
+
+.row__label { flex: 0 0 132px; }
+.row__body { flex: 1 1 320px; min-width: 0; }
+.row__body--stack { display: flex; flex-direction: column; gap: 11px; }
+.row__body--stack-lg { display: flex; flex-direction: column; gap: 13px; }
+.row__body--plain { font-size: 18px; font-weight: 600; color: #1B2330; padding-top: 1px; }
+
+.sec-title { margin: 0; font-size: 21px; font-weight: 800; letter-spacing: 1px; color: #1B2330; }
+.sec-title--sm { font-size: 21px; letter-spacing: 0.5px; line-height: 1.4; }
+
+/* --- bullet list --- */
+.blist { display: flex; flex-direction: column; gap: 11px; }
+.bitem { display: flex; gap: 10px; font-size: 18px; font-weight: 600; line-height: 1.55; color: #1B2330; }
+.bitem__dot { width: 4px; height: 4px; background: #E6003E; border-radius: 1px; margin-top: 9px; flex: 0 0 auto; }
+.bitem strong { font-weight: 700; color: #1b2330; }
+
+.subnote { margin-top: 12px; padding-left: 14px; display: flex; flex-direction: column; gap: 7px; }
+.subnote > div { font-size: 18px; font-weight: 600; color: #1B2330; }
+
+/* --- 모집부문 table --- */
+.scrollhint { display: none; font-size: 13px; font-weight: 600; color: #8a8880; margin-top: 10px; margin-bottom: 8px; }
+.table-scroll { overflow-x: auto; }
+/* 반복 사용 가능한 모집부문 블록 — <div class="job"> 를 복사하면 채용부문이 추가됩니다 */
+.job + .job { margin-top: 26px; }
+.job-table { width: 100%; min-width: 720px; border-collapse: collapse; font-size: 18px; }
+.job-table tr { border-bottom: 1px solid #1B2330; }
+.job-table tr:last-child { border-bottom: none; }
+.job-table th { text-align: left; font-weight: 700; font-size: 18px; color: #1B2330; padding: 14px 10px 10px; }
+.job-table th:first-child { padding-left: 0; width: 130px; white-space: nowrap; }
+.job-table th.th-detail { white-space: nowrap; }
+.job-table th:last-child { padding-right: 0; padding-left: 10px; width: 70px; white-space: nowrap; }
+.job-table td { color: #1B2330; font-weight: 600; vertical-align: top; padding: 16px 10px; line-height: 1.65; }
+.job-table .cell-dept-h { font-size: 18px; font-weight: 700; letter-spacing: 1px; padding: 0 10px 14px 0; width: 130px; white-space: nowrap; }
+.job-table .cell-dept-v { font-size: 18px; font-weight: 700; padding: 0 10px 14px; }
+.job-table .cell-type { padding-left: 0; white-space: nowrap; }
+.job-table .cell-type small { display: inline; font-size: 16px; font-weight: 600; }
+.job-table .cell-detail { white-space: nowrap; }
+.job-table .cell-req div { font-weight: 600; }
+.job-table .cell-req .req-head { font-weight: 700; color: #1b2330; }
+.job-table .cell-req .req-head--gap { margin-top: 8px; }
+.job-table .cell-loc { padding-right: 0; padding-left: 10px; }
+
+/* --- 전형단계 --- */
+.steps { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 10px 12px; }
+.step { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 108px; }
+.step__circle { width: 56px; height: 56px; border-radius: 50%; background: #1b3a6e; display: flex; align-items: center; justify-content: center; }
+.step__label { font-size: 18px; font-weight: 700; text-align: center; color: #1B2330; }
+.step__label small { font-size: 16px; font-weight: 600; color: #1B2330; }
+.step__arrow { height: 56px; display: flex; align-items: center; color: #b0aea8; font-size: 22px; }
+
+/* --- 사업장 주소 --- */
+.addr { display: flex; gap: 6px; }
+.addr__name { font-weight: 700; color: #1b2330; width: 84px; flex: 0 0 auto; }
+
+/* --- 복리후생 / 회사생활 카드 --- */
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card { background: #1b3a6e; border-radius: 12px; padding: 30px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.card__icon { width: 54px; height: 54px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.card__en { font-size: 17px; font-weight: 700; color: #fff; }
+.card__kr { font-size: 18px; font-weight: 600; color: #ffffff; margin-top: 6px; }
+.card__desc { margin-top: 14px; font-size: 18px; font-weight: 600; line-height: 1.7; color: #ffffff; }
+
+/* --- 채용 서류 반환 고지 --- */
+.notice { display: flex; gap: 10px; font-size: 18px; font-weight: 600; line-height: 1.65; color: #1B2330; }
+.notice__dot { width: 4px; height: 4px; background: #E6003E; border-radius: 1px; margin-top: 12px; flex: 0 0 auto; }
+.notice__text { flex: 1; text-align: justify; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 760px) {
+  .hero__rail { position: static; height: auto; left: auto; top: auto; margin-bottom: 18px; }
+  .hero__rail-text { writing-mode: horizontal-tb; transform: none; font-size: 12px; letter-spacing: 3px; }
+  .hero__main { margin-left: 0; }
+  .hero__flex { flex-direction: column-reverse; align-items: flex-start; }
+  .hero__line { margin-left: 0; width: 100%; }
+
+  .row { flex-direction: column; gap: 12px; }
+  .row__label { flex: 0 0 auto; }
+  .row__body { flex: 0 0 auto; }
+
+  .scrollhint { display: block; }
+  .cards { grid-template-columns: 1fr; }
+  .notice__text { text-align: left; }
+}
